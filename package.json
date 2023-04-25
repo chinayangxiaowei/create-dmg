@@ -39,7 +39,7 @@
 		"apple"
 	],
 	"dependencies": {
-		"appdmg": "^0.6.6",
+		"appdmg": "https://github.com/chinayangxiaowei/node-appdmg.git",
 		"execa": "^6.1.0",
 		"gm": "^1.25.0",
 		"icns-lib": "^1.0.1",
