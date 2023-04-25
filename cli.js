@@ -26,6 +26,7 @@ const cli = meow(`
 	  --overwrite          Overwrite existing DMG with the same name
 	  --identity=<value>   Manually set code signing identity (automatic by default)
 	  --dmg-title=<value>  Manually set DMG title (must be <=27 characters) [default: App name]
+	  --keystone-install=<value>  Set .keystone_install script for the chromium update package [default: ""]
 
 	Examples
 	  $ create-dmg 'Lungo.app'
@@ -40,6 +41,9 @@ const cli = meow(`
 			type: 'string',
 		},
 		dmgTitle: {
+			type: 'string',
+		},
+		keystoneInstall: {
 			type: 'string',
 		},
 	},
@@ -120,6 +124,7 @@ async function init() {
 		specification: {
 			title: dmgTitle,
 			icon: composedIconPath,
+			keystoneInstall: cli.flags.keystoneInstall,
 			//
 			// Use transparent background and `background-color` option when this is fixed:
 			// https://github.com/LinusU/node-appdmg/issues/135
