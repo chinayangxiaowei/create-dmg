@@ -134,23 +134,17 @@ async function init() {
 			filesystem: dmgFilesystem,
 			window: {
 				size: {
-					width: 660,
-					height: 400,
+					width: 380,
+					height: 290,
 				},
 			},
 			contents: [
 				{
 					x: 180,
-					y: 170,
+					y: 110,
 					type: 'file',
 					path: appPath,
-				},
-				{
-					x: 480,
-					y: 170,
-					type: 'link',
-					path: '/Applications',
-				},
+				}
 			],
 		},
 	});
